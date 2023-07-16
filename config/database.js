@@ -6,8 +6,8 @@ const { DATABASE_URL } = process.env;
 
 const databaseConnection = async () => {
   try {
-    console.log("mongodb://127.0.0.1:27017/youtube");
-    await mongoose.connect("mongodb://127.0.0.1:27017/youtube");
+    console.log(DATABASE_URL);
+    await mongoose.connect(DATABASE_URL);
   } catch (err) {
     console.log(err);
   }
