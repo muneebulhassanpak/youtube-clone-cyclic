@@ -49,7 +49,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3002;
 mongoose.connection.once("open", () => {
   console.log("connection with database successful");
   app.listen(port, () => {
