@@ -54,7 +54,7 @@ export const signin = async (req, res, next) => {
     if (!passwordComparison) {
       return next(new Error("Incorrect login credentials"));
     }
-    const token = jwt.sign({ id: user._id }, "kll");
+    const token = jwt.sign({ id: user._id }, process.env.JWT_KEY);
     console.log(token);
     return res.cookie("access_token", token).status(200).json({
       status: 200,
